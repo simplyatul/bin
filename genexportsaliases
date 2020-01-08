@@ -9,6 +9,7 @@ alias fs-s='systemctl start fd_media_server'
 alias fs-o='systemctl stop fd_media_server'
 alias fs-r='systemctl restart fd_media_server'
 alias fs-ports='netstat -anp | grep `cat $FS_BASE_DIR/run/freeswitch.pid`'
+alias fs-tl='tail -f $FS_LOG_FILE'
 
 export EXTFS_BASE_DIR=/root/ext_fs/installed/
 export EXTFS_LOG_FILE=/root/ext_fs/installed/var/log/freeswitch/freeswitch.log
@@ -16,27 +17,40 @@ export EXTFS_BIN=/root/ext_fs/installed/bin
 alias extfs-o='kill -9 `cat $EXTFS_BASE_DIR/var/run/freeswitch/freeswitch.pid`'
 alias extfs-s='$EXTFS_BIN/freeswitch -nonat -nc'
 alias extfs-ports='netstat -anp | grep `cat $EXTFS_BASE_DIR/var/run/freeswitch/freeswitch.pid`'
+alias extfs-tl='tail -f $EXTFS_LOG_FILE'
 
 export KAM_CONF_DIR=/usr/local/kamailio/etc/kamailio
+export KAM_LOG_FILE=/var/log/fd/kamailio/kamailio.log
 alias kam-l='systemctl status -l kamailio'
 alias kam-s='systemctl start kamailio'
 alias kam-o='systemctl stop kamailio'
 alias kam-r='systemctl restart kamailio'
 alias kam-ports="netstat -anp | grep `systemctl show --property MainPID kamailio | awk -F'=' '{print $2}'`"
+alias kam-tl='tail -f $KAM_LOG_FILE'
 
+export COUCHDB_LOG_FILE=/var/log/fd/couchdb/couch.log
 alias couch-l='systemctl status -l couchdb'
 alias couch-s='systemctl start couchdb'
 alias couch-o='systemctl stop couchdb'
 alias couch-r='systemctl restart couchdb'
+alias couch-tl='tail -f $COUCHDB_LOG_FILE'
 
 export CASS_BASE_DIR=/etc/cassandra/conf
 export CASS_LOG_DIR=/var/log/cassandra
+export CASS_LOG_FILE_CASS=$CASS_LOG_DIR/cassandra.log
+export CASS_LOG_FILE_DEB=$CASS_LOG_DIR/debug.log
+export CASS_LOG_FILE_SYS=$CASS_LOG_DIR/system.log
+export CASS_LOG_FILE_GC=$CASS_LOG_DIR/gc.log.0.current
 alias cass-l='systemctl status -l cassandra'
 alias cass-s='systemctl start cassandra'
 alias cass-o='systemctl stop cassandra'
 alias cass-r='systemctl restart cassandra'
 alias cass-ports="netstat -anp | grep `systemctl show --property MainPID cassandra | awk -F'=' '{print $2}'`"
-
+alias cass-tla='tail -f $CASS_LOG_FILE_CASS $CASS_LOG_FILE_DEB $CASS_LOG_FILE_SYS $CASS_LOG_FILE_GC'
+alias cass-tlc='tail -f $CASS_LOG_FILE_CASS'
+alias cass-tld='tail -f $CASS_LOG_FILE_DEB'
+alias cass-tls='tail -f $CASS_LOG_FILE_SYS'
+alias cass-tlg='tail -f $CASS_LOG_FILE_GC'
 
 alias hap-l='systemctl status -l haproxy'
 alias hap-s='systemctl start haproxy'
