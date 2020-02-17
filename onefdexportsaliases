@@ -8,17 +8,25 @@ alias ecm-l='systemctl status -l ecallmanager'
 alias ecm-s='systemctl start ecallmanager'
 alias ecm-o='systemctl stop ecallmanager'
 alias ecm-r='systemctl restart ecallmanager'
+alias ecm-tl='tail -f $ECM_LOG_FILE'
 
 export UPO_BASE_DIR=/opt/Avaya/apex/upo-service
 export UPO_LOG_DIR=/var/log/Avaya/apex/upo-service/
+export UPO_LOG_DEBUG=$UPO_LOG_DIR/debug.log
+export UPO_LOG_ERROR=$UPO_LOG_DIR/error.log
 alias upo-l='systemctl status -l upoapp'
 alias upo-s='systemctl start upoapp'
 alias upo-o='systemctl stop upoapp'
 alias upo-r='systemctl restart upoapp'
+alias upo-tla='tail -f $UPO_LOG_DEBUG $UPO_LOG_ERROR'
+alias upo-tld='tail -f $UPO_LOG_DEBUG'
+alias upo-tle='tail -f $UPO_LOG_ERROR'
 
 export API_PRO_CONFIG_FILE=/opt/tomcat/webapps/API/WEB-INF/classes/API.properties
+export API_LOG_FILE=/tmp/api.log
 alias apip-l='systemctl status -l tomcat'
 alias apip-s='systemctl start tomcat'
 alias apip-o='systemctl stop tomcat'
 alias apip-r='systemctl restart tomcat'
+alias apip-tl='tail -f $API_LOG_FILE'
 
