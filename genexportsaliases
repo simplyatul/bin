@@ -60,5 +60,5 @@ alias rsl-r='systemctl restart rsyslog'
 # Unlimited history
 HISTSIZE=
 HISTFILESIZE=
-
+HISTTIMEFORMAT="%F %T: "
 
