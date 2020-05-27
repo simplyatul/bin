@@ -34,6 +34,7 @@ alias couch-s='systemctl start couchdb'
 alias couch-o='systemctl stop couchdb'
 alias couch-r='systemctl restart couchdb'
 alias couch-tl='tail -f $COUCHDB_LOG_FILE'
+alias couch-ports="netstat -anp | grep `systemctl show --property MainPID couchdb | awk -F'=' '{print $2}'`"
 
 export CASS_BASE_DIR=/etc/cassandra/conf
 export CASS_LOG_DIR=/var/log/cassandra
@@ -56,6 +57,7 @@ alias hap-l='systemctl status -l haproxy'
 alias hap-s='systemctl start haproxy'
 alias hap-o='systemctl stop haproxy'
 alias hap-r='systemctl restart haproxy'
+alias hap-ports="netstat -anp | grep `systemctl show --property MainPID haproxy | awk -F'=' '{print $2}'`"
 
 export SIPP_BASE_DIR=/root/sipp_scripts
 alias sipp-ports='netstat -anp | grep sipp'
@@ -64,11 +66,13 @@ alias rmq-l='systemctl status -l rabbitmq-server'
 alias rmq-s='systemctl start rabbitmq-server'
 alias rmq-o='systemctl stop rabbitmq-server'
 alias rmq-r='systemctl restart rabbitmq-server'
+alias rmq-ports="netstat -anp | grep `systemctl show --property MainPID rabbitmq-server | awk -F'=' '{print $2}'`"
 
 alias rsl-l='systemctl status -l rsyslog'
 alias rsl-s='systemctl start rsyslog'
 alias rsl-o='systemctl stop rsyslog'
 alias rsl-r='systemctl restart rsyslog'
+alias rsl-ports="netstat -anp | grep `systemctl show --property MainPID rsyslog | awk -F'=' '{print $2}'`"
 
 
 # Unlimited history
