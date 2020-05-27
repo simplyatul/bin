@@ -1,7 +1,7 @@
 # Exports/Aliases
 
-export ECM_BASE_DIR=/root/torch/install/share/lua/5.1/lua
-export ECM_BASE_DIR_NEW=/usr/local/torch/share/lua/5.1/lua
+export ECM_BASE_DIR_OLD=/root/torch/install/share/lua/5.1/lua
+export ECM_BASE_DIR=/usr/local/torch/share/lua/5.1/lua
 export ECM_LOG_FILE=/var/log/fd/ecallmanager/ecallmanager.log
 export ECM_LOG_DIR=/var/log/fd/ecallmanager/ecallmanager.log
 alias ecm-l='systemctl status -l ecallmanager'
