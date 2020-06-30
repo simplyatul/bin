@@ -74,6 +74,7 @@ alias rsl-o='systemctl stop rsyslog'
 alias rsl-r='systemctl restart rsyslog'
 alias rsl-ports="netstat -anp | grep `systemctl show --property MainPID rsyslog | awk -F'=' '{print $2}'`"
 
+alias ll='ls -lrt --color=auto'
 
 # Unlimited history
 HISTSIZE=
