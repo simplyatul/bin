@@ -76,6 +76,19 @@ alias rsl-ports="netstat -anp | grep `systemctl show --property MainPID rsyslog 
 
 alias ll='ls -lrt --color=auto'
 alias grep='grep --color=auto'
+alias mca='rm -rf ./*; cmake ../; make clean; make -j `nproc`'
+alias mc='make clean; make -j `nproc`'
+alias m='make -j `nproc`'
+
+# n [no of lines]
+# prints 10 or [no of lines] of newline 
+n() { 
+    num=${1:-10}
+    for i in $(seq 1 $num) 
+    do  
+        echo -e '\n'
+    done
+}
 
 # Unlimited history
 HISTSIZE=
