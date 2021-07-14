@@ -74,7 +74,7 @@ alias rsl-o='systemctl stop rsyslog'
 alias rsl-r='systemctl restart rsyslog'
 alias rsl-ports="netstat -anp | grep `systemctl show --property MainPID rsyslog | awk -F'=' '{print $2}'`"
 
-alias ll='ls -lrt --color=auto'
+alias ll='ls -lrth --color=auto'
 alias grep='grep --color=auto'
 alias mca='rm -rf ./*; cmake ../; make clean; make -j `nproc`'
 alias mc='make clean; make -j `nproc`'
