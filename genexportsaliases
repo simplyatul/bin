@@ -95,6 +95,7 @@ HISTSIZE=-1
 HISTFILESIZE=-1
 HISTTIMEFORMAT="%F %T: "
 
-export PS1='\[\e[0;96m\][\[\e[0m\]\d \[\e[0m\]\t\[\e[0;96m\]] \[\e[0;96m\][\[\e[0;38;5;226m\]\u\[\e[0;93m\]@\[\e[0;93m\]\h\[\e[0;96m\]] \[\e[0;96m\][\[\e[0m\]\w\[\e[0;96m\]]\[\e[0m\]# \[\e[0m\](\[\e[0;92m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)\[\e[0m\])\n\[\e[0m\]'
+# Credit: https://scriptim.github.io/bash-prompt-generator/
+export PS1='\[\e[0;96m\][\[\e[0m\]\d \[\e[0m\]\t\[\e[0;96m\]] \[\e[0;96m\][\[\e[0;38;5;226m\]\u\[\e[0;93m\]@\[\e[0;93m\]\h\[\e[0;96m\]] \[\e[0;96m\][\[\e[0m\]\w\[\e[0;96m\]]\[\e[0m\]# \[\e[0;92m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)\n\[\e[0m\]'
 
 
