@@ -1,0 +1,4 @@
+# Exports/Aliases
+
+alias dpa='docker ps -a'
+alias di='docker images'
