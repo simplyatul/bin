@@ -1,0 +1,35 @@
+# Exports/Aliases
+
+alias ll='ls -lrth --color=auto'
+alias grep='grep --color=auto'
+
+alias mca='rm -rf ./*; cmake ../; make clean; make -j `nproc`'
+alias mc='make clean; make -j `nproc`'
+alias m='make -j `nproc`'
+
+alias kg='kubectl get'
+alias kga='kubectl get all'
+alias kr='kubectl run'
+alias kd='kubectl delete'
+alias kls='kubectl describe'
+alias kgp='kubectl get pod -o wide'
+
+# n [no of lines]
+# prints 10 or [no of lines] of newline 
+n() { 
+    num=${1:-10}
+    for i in $(seq 1 $num) 
+    do  
+        echo -e '\n'
+    done
+}
+
+# Unlimited history
+HISTSIZE=-1
+HISTFILESIZE=-1
+HISTTIMEFORMAT="%F %T: "
+
+# Credit: https://scriptim.github.io/bash-prompt-generator/
+export PS1='\[\e[0;96m\][\[\e[0m\]\d \[\e[0m\]\t\[\e[0;96m\]] \[\e[0;96m\][\[\e[0;38;5;226m\]\u\[\e[0;93m\]@\[\e[0;93m\]\h\[\e[0;96m\]] \[\e[0;96m\][\[\e[0m\]\w\[\e[0;96m\]]\[\e[0m\]# \[\e[0;92m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)\n\[\e[0m\]'
+
+
