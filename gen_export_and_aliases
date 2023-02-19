@@ -3,17 +3,6 @@
 alias ll='ls -lrth --color=auto'
 alias grep='grep --color=auto'
 
-alias mca='rm -rf ./*; cmake ../; make clean; make -j `nproc`'
-alias mc='make clean; make -j `nproc`'
-alias m='make -j `nproc`'
-
-alias kg='kubectl get'
-alias kga='kubectl get all'
-alias kr='kubectl run'
-alias kd='kubectl delete'
-alias kls='kubectl describe'
-alias kgp='kubectl get pod -o wide'
-
 # n [no of lines]
 # prints 10 or [no of lines] of newline 
 n() { 
