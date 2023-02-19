@@ -9,23 +9,21 @@ declare -A farr=(
         )
 
 for i in "${farr[@]}"; do
-        FILE_PATH="$i"
-        #FILE_NAME='~/.'`basename "$i"`
-        FILE_NAME="/tmp/"`basename "$i"`
-        #echo $FILE_PATH
-        #echo $FILE_NAME
-        if [ -s "$FILE_NAME" ];
+        REMOTE_FILE="$i"
+        LOCAL_FILE="/tmp/"`basename "$i"`
+        #echo $REMOTE_FILE
+        #echo $LOCAL_FILE
+        if [ -s "$LOCAL_FILE" ];
         then
-                # echo "$FILE_NAME exist"
-                source $FILE_NAME
+                # echo "$LOCAL_FILE exist"
+                source $LOCAL_FILE
                 :
         else
-                # echo "$FILE_NAME does not exist"
-                curl -so $FILE_NAME -LJ $FILE_PATH
-                source $FILE_NAME
+                # echo "$LOCAL_FILE does not exist"
+                curl --silent --output $LOCAL_FILE --location $REMOTE_FILE
+                source $LOCAL_FILE
                 :
         fi
 done
 
 #set +o xtrace
-
