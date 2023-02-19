@@ -1,3 +1,9 @@
-## Quick cmd 
+## Intro
+See <TBD> to know more how to use this repo.
 
-$ curl -so /tmp/onefd -LJ https://raw.githubusercontent.com/simplyatul/bin/master/mybashrc; cd /tmp; source /tmp/onefd; cd -
+## Quick commands 
+
+```
+wget https://github.com/simplyatul/bin/blob/master/setaliases.sh
+source setaliases.sh
+```
