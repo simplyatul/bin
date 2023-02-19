@@ -1,5 +1,5 @@
 ## Intro
-Check `<TBD>` to know more about how to use this repo.
+Check https://atulthosar.hashnode.dev/fetching-your-aliases to know more about how to use this repo.
 
 ## Quick commands 
 
