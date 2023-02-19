@@ -1,5 +1,5 @@
 ## Intro
-See <TBD> to know more how to use this repo.
+Check `<TBD>` to know more about how to use this repo.
 
 ## Quick commands 
 
