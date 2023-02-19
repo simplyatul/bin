@@ -1,9 +1,11 @@
 #set -o xtrace
 
 declare -A farr=(
-        [0]="https://raw.githubusercontent.com/simplyatul/bin/master/genexportsaliases"
-        [1]="https://raw.githubusercontent.com/simplyatul/bin/master/gitaliases"
-        [2]="https://raw.githubusercontent.com/simplyatul/bin/master/onefdexportsaliases"
+        [0]="https://raw.githubusercontent.com/simplyatul/bin/master/gen_export_and_aliases"
+        [1]="https://raw.githubusercontent.com/simplyatul/bin/master/git_aliases"
+        [2]="https://raw.githubusercontent.com/simplyatul/bin/master/docker_aliases"
+        [3]="https://raw.githubusercontent.com/simplyatul/bin/master/k8s_aliases"
+        [4]="https://raw.githubusercontent.com/simplyatul/bin/master/make_aliases"
         )
 
 for i in "${farr[@]}"; do
