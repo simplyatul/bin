@@ -1,5 +1,5 @@
 ## Intro
-Check my article [Fetching Your Aliases] to know more about how to use this repo.
+Check the article [Fetching Your Aliases] to know more about how to use this repo.
 
 ## Quick commands 
 
