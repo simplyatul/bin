@@ -1,0 +1,110 @@
+# Exports/Aliases
+
+export ECM_BASE_DIR_OLD=/root/torch/install/share/lua/5.1/lua
+export ECM_BASE_DIR=/usr/local/torch/share/lua/5.1/lua
+export ECM_LOG_FILE=/var/log/fd/ecallmanager/ecallmanager.log
+export ECM_LOG_DIR=/var/log/fd/ecallmanager/ecallmanager.log
+alias ecm-l='systemctl status -l ecallmanager'
+alias ecm-s='systemctl start ecallmanager'
+alias ecm-o='systemctl stop ecallmanager'
+alias ecm-r='systemctl restart ecallmanager'
+alias ecm-tl='tail -f $ECM_LOG_FILE'
+alias ecm-ports="netstat -anp | grep `pgrep luajit`" 
+
+export UPO_BASE_DIR=/opt/Avaya/apex/upo-service
+export UPO_LOG_DIR=/var/log/Avaya/apex/upo-service/
+export UPO_LOG_DEBUG=$UPO_LOG_DIR/debug.log
+export UPO_LOG_ERROR=$UPO_LOG_DIR/error.log
+alias upo-l='systemctl status -l upoapp'
+alias upo-s='systemctl start upoapp'
+alias upo-o='systemctl stop upoapp'
+alias upo-r='systemctl restart upoapp'
+alias upo-tla='tail -f $UPO_LOG_DEBUG $UPO_LOG_ERROR'
+alias upo-tld='tail -f $UPO_LOG_DEBUG'
+alias upo-tle='tail -f $UPO_LOG_ERROR'
+alias upo-ports="netstat -anp | grep `systemctl show --property MainPID upoapp | awk -F'=' '{print $2}'`"
+
+export API_PRO_CONFIG_FILE=/opt/tomcat/webapps/API/WEB-INF/classes/API.properties
+export API_LOG_FILE=/tmp/api.log
+alias apip-l='systemctl status -l tomcat'
+alias apip-s='systemctl start tomcat'
+alias apip-o='systemctl stop tomcat'
+alias apip-r='systemctl restart tomcat'
+alias apip-tl='tail -f $API_LOG_FILE'
+alias apip-ports="netstat -anp | grep `systemctl show --property MainPID tomcat | awk -F'=' '{print $2}'`"
+
+
+export FS_BASE_DIR=/usr/local/freeswitch/
+export FS_LOG_FILE=/var/log/fd/freeswitch/freeswitch.log
+export FS_LOG_DIR=/var/log/fd/freeswitch
+export FS_CONF_DIR=/usr/local/freeswitch/conf
+alias fs-l='systemctl status -l fd_media_server'
+alias fs-s='systemctl start fd_media_server'
+alias fs-o='systemctl stop fd_media_server'
+alias fs-r='systemctl restart fd_media_server'
+alias fs-ports='netstat -anp | grep `cat $FS_BASE_DIR/run/freeswitch.pid`'
+alias fs-tl='tail -f $FS_LOG_FILE'
+
+export EXTFS_BASE_DIR=/root/ext_fs/installed/
+export EXTFS_LOG_FILE=/root/ext_fs/installed/var/log/freeswitch/freeswitch.log
+export EXTFS_BIN=/root/ext_fs/installed/bin
+alias extfs-o='kill -9 `cat $EXTFS_BASE_DIR/var/run/freeswitch/freeswitch.pid`'
+alias extfs-s='$EXTFS_BIN/freeswitch -nonat -nc'
+alias extfs-ports='netstat -anp | grep `cat $EXTFS_BASE_DIR/var/run/freeswitch/freeswitch.pid`'
+alias extfs-tl='tail -f $EXTFS_LOG_FILE'
+
+export KAM_CONF_DIR=/usr/local/kamailio/etc/kamailio
+export KAM_LOG_FILE=/var/log/fd/kamailio/kamailio.log
+alias kam-l='systemctl status -l kamailio'
+alias kam-s='systemctl start kamailio'
+alias kam-o='systemctl stop kamailio'
+alias kam-r='systemctl restart kamailio'
+alias kam-ports="netstat -anp | grep `systemctl show --property MainPID kamailio | awk -F'=' '{print $2}'`"
+alias kam-tl='tail -f $KAM_LOG_FILE'
+
+export COUCHDB_LOG_FILE=/var/log/fd/couchdb/couch.log
+alias couch-l='systemctl status -l couchdb'
+alias couch-s='systemctl start couchdb'
+alias couch-o='systemctl stop couchdb'
+alias couch-r='systemctl restart couchdb'
+alias couch-tl='tail -f $COUCHDB_LOG_FILE'
+alias couch-ports="netstat -anp | grep `systemctl show --property MainPID couchdb | awk -F'=' '{print $2}'`"
+
+export CASS_BASE_DIR=/etc/cassandra/conf
+export CASS_LOG_DIR=/var/log/cassandra
+export CASS_LOG_FILE_CASS=$CASS_LOG_DIR/cassandra.log
+export CASS_LOG_FILE_DEB=$CASS_LOG_DIR/debug.log
+export CASS_LOG_FILE_SYS=$CASS_LOG_DIR/system.log
+export CASS_LOG_FILE_GC=$CASS_LOG_DIR/gc.log.0.current
+alias cass-l='systemctl status -l cassandra'
+alias cass-s='systemctl start cassandra'
+alias cass-o='systemctl stop cassandra'
+alias cass-r='systemctl restart cassandra'
+alias cass-ports="netstat -anp | grep `systemctl show --property MainPID cassandra | awk -F'=' '{print $2}'`"
+alias cass-tla='tail -f $CASS_LOG_FILE_CASS $CASS_LOG_FILE_DEB $CASS_LOG_FILE_SYS $CASS_LOG_FILE_GC'
+alias cass-tlc='tail -f $CASS_LOG_FILE_CASS'
+alias cass-tld='tail -f $CASS_LOG_FILE_DEB'
+alias cass-tls='tail -f $CASS_LOG_FILE_SYS'
+alias cass-tlg='tail -f $CASS_LOG_FILE_GC'
+
+alias hap-l='systemctl status -l haproxy'
+alias hap-s='systemctl start haproxy'
+alias hap-o='systemctl stop haproxy'
+alias hap-r='systemctl restart haproxy'
+alias hap-ports="netstat -anp | grep `systemctl show --property MainPID haproxy | awk -F'=' '{print $2}'`"
+
+export SIPP_BASE_DIR=/root/sipp_scripts
+alias sipp-ports='netstat -anp | grep sipp'
+
+alias rmq-l='systemctl status -l rabbitmq-server'
+alias rmq-s='systemctl start rabbitmq-server'
+alias rmq-o='systemctl stop rabbitmq-server'
+alias rmq-r='systemctl restart rabbitmq-server'
+alias rmq-ports="netstat -anp | grep `systemctl show --property MainPID rabbitmq-server | awk -F'=' '{print $2}'`"
+
+alias rsl-l='systemctl status -l rsyslog'
+alias rsl-s='systemctl start rsyslog'
+alias rsl-o='systemctl stop rsyslog'
+alias rsl-r='systemctl restart rsyslog'
+alias rsl-ports="netstat -anp | grep `systemctl show --property MainPID rsyslog | awk -F'=' '{print $2}'`"
+
