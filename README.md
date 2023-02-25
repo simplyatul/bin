@@ -4,7 +4,7 @@ Check the article [Fetching Your Aliases] to know more about how to use this rep
 ## Quick commands 
 
 ```
-wget https://github.com/simplyatul/bin/blob/master/setaliases.sh
+wget https://raw.githubusercontent.com/simplyatul/bin/master/setaliases.sh
 source setaliases.sh
 ```
 
