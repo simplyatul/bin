@@ -14,3 +14,6 @@ alias mi='echo time mvn install; time mvn install'
 alias gb='echo git branch; git branch'
 alias gco='echo git checkout; git checkout '
 
+# Remember git credentials for a day
+git config --global credential.helper 'cache --timeout=86400'
+
