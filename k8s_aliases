@@ -1,7 +1,7 @@
 # Exports/Aliases
 
-# Comment below line if you are not using minikube
-alias kubectl="minikube kubectl --"
+# Uncomment below line if you are using minikube
+# alias kubectl="minikube kubectl --"
 
 alias kg='kubectl get'
 alias kga='kubectl get all'
