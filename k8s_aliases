@@ -15,3 +15,6 @@ alias kr='kubectl run'
 alias kd='kubectl delete'
 alias kls='kubectl describe'
 alias kgp='kubectl get pod -o wide'
+
+# Get all K8S namespaces
+alias kg='kubectl get namespaces'
