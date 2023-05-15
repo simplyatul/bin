@@ -10,7 +10,7 @@ alias k=kubectl
 complete -o default -F __start_kubectl k
 
 alias kg='kubectl get'
-alias kga='kubectl get all'
+alias kga='kubectl get all --show-labels'
 alias kr='kubectl run'
 alias kd='kubectl delete'
 alias kls='kubectl describe'
