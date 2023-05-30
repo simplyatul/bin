@@ -11,4 +11,4 @@ source setaliases.sh
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
-[Fetching Your Aliases]: https://atulthosar.hashnode.dev/fetching-your-aliases
+[Fetching Your Aliases]: https://hackernoon.com/bash-aliases-take-them-with-you
