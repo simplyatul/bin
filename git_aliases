@@ -1,3 +1,6 @@
+# MIT License
+# Copyright (c) 2023 Atul Thosar (atulthosar@gmail.com)
+
 alias gs='echo git status; git status'
 alias gl='echo git log --name-status --decorate; git log --name-status --decorate'
 alias gcm='echo git checkout master; git checkout master'

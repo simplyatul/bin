@@ -1,3 +1,6 @@
+# MIT License
+# Copyright (c) 2023 Atul Thosar (atulthosar@gmail.com)
+
 # Exports/Aliases
 
 alias ll='ls -lrth --color=auto'
