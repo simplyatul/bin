@@ -3,7 +3,7 @@
 
 #set -o xtrace
 
-declare -A farr=(
+declare -A files=(
         [0]="https://raw.githubusercontent.com/simplyatul/bin/master/gen_export_and_aliases"
         [1]="https://raw.githubusercontent.com/simplyatul/bin/master/git_aliases"
         [2]="https://raw.githubusercontent.com/simplyatul/bin/master/docker_aliases"
@@ -11,11 +11,11 @@ declare -A farr=(
         [4]="https://raw.githubusercontent.com/simplyatul/bin/master/make_aliases"
         )
 
-for i in "${farr[@]}"; do
+for i in "${files[@]}"; do
         REMOTE_FILE="$i"
-        LOCAL_FILE="/tmp/"`basename "$i"`
-        #echo $REMOTE_FILE
-        #echo $LOCAL_FILE
+        LOCAL_FILE="$HOME/"`basename "$i"`
+        # echo $REMOTE_FILE
+        # echo $LOCAL_FILE
         if [ -s "$LOCAL_FILE" ];
         then
                 # echo "$LOCAL_FILE exist"
