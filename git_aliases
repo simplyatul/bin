@@ -20,3 +20,5 @@ alias gco='echo git checkout; git checkout '
 # Remember git credentials for 30 days
 git config --global credential.helper 'cache --timeout=2592000'
 
+# Prints default git branch
+alias gbd='basename $(git symbolic-ref --short refs/remotes/origin/HEAD)'
