@@ -14,11 +14,13 @@ complete -o default -F __start_kubectl k
 
 alias kg='kubectl get'
 #alias kga='kubectl get all --show-labels'
-alias kga='kubectl get all'
-alias kr='kubectl run'
-alias kd='kubectl delete'
-alias kls='kubectl describe'
-alias kgp='kubectl get pod -o wide'
+alias kga='echo kubectl get all; kubectl get all'
+alias kr='echo kubectl run; kubectl run'
+alias kd='echo kubectl delete; kubectl delete'
+alias kds='echo kubectl describe; kubectl describe'
+alias kex='echo kubectl explain; kubectl explain'
+alias kgp='echo kubectl get pod -o wide; kubectl get pod -o wide'
 
+alias kgn='echo kubectl get nodes -o wide; kubectl get nodes -o wide'
 # Get all K8S namespaces
-alias kgn='kubectl get namespaces'
+alias kgns='echo kubectl get namespaces; kubectl get namespaces'
