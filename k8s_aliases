@@ -24,3 +24,4 @@ alias kgp='echo kubectl get pod -o wide; kubectl get pod -o wide'
 alias kgn='echo kubectl get nodes -o wide; kubectl get nodes -o wide'
 # Get all K8S namespaces
 alias kgns='echo kubectl get namespaces; kubectl get namespaces'
+alias kgs='echo kubectl get services -o wide; kubectl get services -o wide'
